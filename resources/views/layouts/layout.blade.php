@@ -72,9 +72,9 @@
         <div class="drawer-content">
             @yield('content')
         </div>
-        <div class="drawer-side" style="height: calc(100dvh - 4rem);">
+        <div class="drawer-side h-dvh lg:h-[calc(100dvh-4rem)]">
           <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
-          <ul class="menu bg-base-100 text-base-content w-80 p-4 border-e gap-2" style="height: calc(100dvh - 4rem);">
+          <ul class="menu bg-base-100 text-base-content w-80 p-4 border-e gap-2 h-dvh lg:h-[calc(100dvh-4rem)]">
             <li class="flex flex-row items-center ">
                 <a class="w-full  {{Request::is('/') ? 'btn-active' : ''}}" href={{route('home')}}>
                     <i class="fa fa-home"></i>

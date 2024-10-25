@@ -75,7 +75,7 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function update(ArticleRequest $request){
+    public function update(Request $request){
         $id = $request->id;
         $client = new Client();
         
@@ -123,7 +123,7 @@ class ArticleController extends Controller
             ]);
     
             $data = json_decode($loginRequest->getbody());
-            return redirect()->route('home')->with([
+            return redirect()->route('article.detail',['id'=>$id])->with([
                 'status' => $data->status,
                 'message' => $data->message,
                 'articles' => $data->data

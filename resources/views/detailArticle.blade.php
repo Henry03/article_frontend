@@ -3,7 +3,7 @@
 
 <div class="drawer drawer-end lg:drawer-open">
     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-    <div class="drawer-content">
+    <div class="drawer-content overflow-y-scroll" style="height: calc(100dvh - 4rem);">
         <div class="p-5 flex flex-col gap-2">
             <div class="rounded-xl p-5 border gap-2 flex flex-col">
                 <div class="flex justify-between">
@@ -73,8 +73,8 @@
                 </div>
             </div>
         @endif
-        <div class="px-5 flex flex-col gap-2">
-        @foreach($article->comments as $comment)
+        <div class="px-5 flex flex-col gap-2 mb-5">
+            @foreach($article->comments as $comment)
                 <div class="rounded-xl p-5 border gap-2 flex flex-col">
                     <div class="flex flex-row gap-2 text-sm items-center">
                         <x-UserProfileIcon name="{{$comment->username}}" height="7" width="7"/>
@@ -85,8 +85,8 @@
                         {{$comment->body}}
                     </p>
                 </div>
-                @endforeach
-            </div>
+            @endforeach
+        </div>
     </div>
     <div class="drawer-side" style="height: calc(100dvh - 4rem);">
       <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
@@ -125,7 +125,7 @@
             </form>
         </div>
         <p class="py-4">Peoples who like this article</p>
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-1">
             @foreach($article->like as $item)
                 <div class="flex items-center border rounded-xl p-3 justify-between my-1">
                     <div class="flex gap-2">
